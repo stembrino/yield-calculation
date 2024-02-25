@@ -1,4 +1,4 @@
-import React, { FC, ReactNode, useRef } from 'react';
+import React, { FC, ReactNode, useRef } from "react";
 
 type InputProps = {
   id: string;
@@ -9,9 +9,16 @@ type InputProps = {
   onChange: ({ name, value }: { value: number; name: string }) => void;
 };
 
-const CurrencyInput: FC<InputProps> = ({ id, value, label, icon, name, onChange }) => {
+const CurrencyInput: FC<InputProps> = ({
+  id,
+  value,
+  label,
+  icon,
+  name,
+  onChange,
+}) => {
   const inputRef = useRef<HTMLInputElement>(null);
-  const formatter = Intl.NumberFormat('pt-BR', {
+  const formatter = Intl.NumberFormat("pt-BR", {
     useGrouping: true,
     minimumFractionDigits: 0,
     maximumFractionDigits: 0,
@@ -19,7 +26,7 @@ const CurrencyInput: FC<InputProps> = ({ id, value, label, icon, name, onChange 
 
   const handleOnChange = () => {
     if (!inputRef.current) return;
-    const value = inputRef.current.value.replace(/\./g, '');
+    const value = inputRef.current.value.replace(/\./g, "");
     const extractedNumbers = value.match(/\d+/g);
     const valueAsNumber = Number(extractedNumbers);
     onChange({ value: valueAsNumber, name });

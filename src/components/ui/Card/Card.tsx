@@ -1,11 +1,16 @@
-import React, { FC } from 'react';
-import Tag from './Tag/Tag';
-import { CardProps } from './types';
-import { BsCalendar } from 'react-icons/bs';
+import React, { FC } from "react";
+import Tag from "./Tag/Tag";
+import { CardProps } from "./types";
+import { BsCalendar } from "react-icons/bs";
 
 const Card: FC<CardProps> = ({ title, info, period }) => {
   const Tags = info.map((info) => (
-    <Tag key={info.id} ellipseColor={info.ellipseColor} label={info.label} value={info.value} />
+    <Tag
+      key={info.id}
+      ellipseColor={info.ellipseColor}
+      label={info.label}
+      value={info.value}
+    />
   ));
 
   return (

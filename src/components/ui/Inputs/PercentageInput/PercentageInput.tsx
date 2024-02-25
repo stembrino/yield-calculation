@@ -1,5 +1,5 @@
-import React, { FC, useRef } from 'react';
-import { FaPercent } from 'react-icons/fa';
+import React, { FC, useRef } from "react";
+import { FaPercent } from "react-icons/fa";
 
 type PercentageInputProps = {
   id: string;
@@ -9,7 +9,13 @@ type PercentageInputProps = {
   onChange: ({ name, value }: { name: string; value: number }) => void;
 };
 
-const PercentageInput: FC<PercentageInputProps> = ({ id, name, value, label, onChange }) => {
+const PercentageInput: FC<PercentageInputProps> = ({
+  id,
+  name,
+  value,
+  label,
+  onChange,
+}) => {
   const inputRef = useRef<HTMLInputElement>(null);
 
   const handleOnChange = () => {

@@ -1,5 +1,5 @@
-import React, { FC, useRef } from 'react';
-import { BsCalendar } from 'react-icons/bs';
+import React, { FC, useRef } from "react";
+import { BsCalendar } from "react-icons/bs";
 
 type MonthInputProps = {
   id: string;
@@ -9,7 +9,13 @@ type MonthInputProps = {
   onChange: ({ name, value }: { value: number; name: string }) => void;
 };
 
-const MonthInput: FC<MonthInputProps> = ({ id, value, label, name, onChange }) => {
+const MonthInput: FC<MonthInputProps> = ({
+  id,
+  value,
+  label,
+  name,
+  onChange,
+}) => {
   const inputRef = useRef<HTMLInputElement>(null);
 
   const handleOnChange = () => {

@@ -1,4 +1,4 @@
-import { TagProps } from './Tag/types';
+import { TagProps } from "./Tag/types";
 
 export type Info = TagProps & { id: string };
 export type CardProps = {
